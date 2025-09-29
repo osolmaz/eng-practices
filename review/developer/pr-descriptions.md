@@ -166,7 +166,9 @@ the first line, as this can obscure the content.
 
 Examples with and without tags:
 
-``` {.good}
+Good:
+
+```
 // Tags are okay in the first line if kept short.
 [banana] Peel the banana before eating.
 
@@ -185,7 +187,9 @@ Peel the banana before eating.
 > #banana #apple
 ```
 
-``` {.bad}
+Bad:
+
+```
 // Too many tags (or tags that are too long) overwhelm the first line.
 //
 // Instead, consider whether the tags can be moved into the description body

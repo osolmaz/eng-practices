@@ -169,7 +169,7 @@ Starting from the model (at the bottom) and working up to the client:
 | Client  | Add button                | Add button                      |
 | API     | Add endpoint              | Add endpoint                    |
 | Service | Implement transformations | Share transformation logic with |
-:         :                           : multiplication                  :
+| ...     | ...                       | ...                             |
 | Model   | Add proto definition      | Add proto definition            |
 
 ## Separate Out Refactorings {#refactoring}

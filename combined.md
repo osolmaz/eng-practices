@@ -2,7 +2,7 @@
 
 > This is an adaptation of the original [Google's Code Review Guidelines](https://google.github.io/eng-practices/review/), to use GitHub specific terminology. Google has their own internal tools for version control ([Piper](https://en.wikipedia.org/wiki/Piper_(source_control_system))) and code review ([Critique](https://abseil.io/resources/swe-book/html/ch19.html)). They have their own terminology, like "Change List" (CL) instead of "Pull Request" (PR) which most developers are more familiar with. The changes are minimal and the content is kept as close to the original as possible. The hope is to make this gem accessible to a wider audience.
 >
-> I also combined the whole set of documents into a single file, to make it easier to consume. You can find my fork [here](https://github.com/osolmaz/eng-practices/).
+> I also combined the whole set of documents into a single file, to make it easier to consume. You can find my fork [here](https://github.com/osolmaz/eng-practices/). If you notice any mistakes, please feel free to submit a PR to the fork.
 
 
 <a id="overview"></a>
@@ -1059,7 +1059,9 @@ the first line, as this can obscure the content.
 
 Examples with and without tags:
 
-``` {.good}
+Good:
+
+```
 // Tags are okay in the first line if kept short.
 [banana] Peel the banana before eating.
 
@@ -1078,7 +1080,9 @@ Peel the banana before eating.
 > #banana #apple
 ```
 
-``` {.bad}
+Bad:
+
+```
 // Too many tags (or tags that are too long) overwhelm the first line.
 //
 // Instead, consider whether the tags can be moved into the description body
@@ -1274,7 +1278,7 @@ Starting from the model (at the bottom) and working up to the client:
 | Client  | Add button                | Add button                      |
 | API     | Add endpoint              | Add endpoint                    |
 | Service | Implement transformations | Share transformation logic with |
-:         :                           : multiplication                  :
+| ...     | ...                       | ...                             |
 | Model   | Add proto definition      | Add proto definition            |
 
 ### Separate Out Refactorings {#refactoring}
@@ -1413,11 +1417,11 @@ If you can't answer that question, ask the reviewer for clarification.
 And then, if you understand the comments but disagree with them, it's important
 to think collaboratively, not combatively or defensively:
 
-```txt {.bad}
+```txt
 Bad: "No, I'm not going to do that."
 ```
 
-```txt {.good}
+```txt
 Good: "I went with X because of [these pros/cons] with [these tradeoffs]
 My understanding is that using Y would be worse because of [these reasons].
 Are you suggesting that Y better serves the original tradeoffs, that we should
