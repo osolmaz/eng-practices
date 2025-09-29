@@ -2,8 +2,8 @@
 
 
 
-When you've sent a CL out for review, it's likely that your reviewer will
-respond with several comments on your CL. Here are some useful things to know
+When you've sent a PR out for review, it's likely that your reviewer will
+respond with several comments on your PR. Here are some useful things to know
 about handling reviewer comments.
 
 ## Don't Take it Personally {#personal}
@@ -20,7 +20,7 @@ the reviewer is trying to communicate to me?" and then operate as though that's
 what they actually said.
 
 **Never respond in anger to code review comments.** That is a serious breach of
-professional etiquette that will live forever in the code review tool. If you
+professional etiquette that will live in the review history. If you
 are too angry or annoyed to respond kindly, then walk away from your computer
 for a while, or work on something else until you feel calm enough to reply
 politely.
@@ -44,12 +44,12 @@ tool.
 
 If a reviewer didn't understand some piece of your code, it's likely other
 future readers of the code won't understand either. Writing a response in the
-code review tool doesn't help future code readers, but clarifying your code or
+review tool doesn't help future code readers, but clarifying your code or
 adding code comments does help them.
 
 ## Think Collaboratively {#think}
 
-Writing a CL can take a lot of work. It's often really satisfying to finally
+Writing a PR can take a lot of work. It's often really satisfying to finally
 send one out for review, feel like it's done, and be pretty sure that no further
 work is needed. It can be frustrating to receive comments asking for changes,
 especially if you don't agree with them.
@@ -82,7 +82,7 @@ ways to collaborate: ask for clarifications, discuss pros/cons, and provide
 explanations of why your method of doing things is better for the codebase,
 users, and/or Google.
 
-Sometimes, you might know something about the users, codebase, or CL that the
+Sometimes, you might know something about the users, codebase, or PR that the
 reviewer doesn't know. [Fix the code](#code) where appropriate, and engage your
 reviewer in discussion, including giving them more context. Usually you can come
 to some consensus between yourself and the reviewer based on technical facts.

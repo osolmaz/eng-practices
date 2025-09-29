@@ -11,18 +11,19 @@ Currently this contains the following documents:
 *   [Google's Code Review Guidelines](review/index.md), which are actually two
     separate sets of documents:
     *   [The Code Reviewer's Guide](review/reviewer/index.md)
-    *   [The Change Author's Guide](review/developer/index.md)
+    *   [The PR Author's Guide](review/developer/index.md)
 
 ## Terminology
 
 There is some Google-internal terminology used in some of these documents, which
 we clarify here for external readers:
 
-*   **CL**: Stands for "changelist", which means one self-contained change that
-    has been submitted to version control or which is undergoing code review.
-    Other organizations often call this a "change", "patch", or "pull-request".
-*   **LGTM**: Means "Looks Good to Me". It is what a code reviewer says when
-    approving a CL.
+*   **PR (Pull Request)**: On GitHub, read all references to "CL" in these
+    documents as "PR".
+*   **Approve**: On GitHub, reviewers should use the formal "Approve" action in
+    a PR review (equivalent to saying "LGTM").
+*   **CODEOWNERS**: Where these docs mention an OWNERS file, use GitHub's
+    `.github/CODEOWNERS` for code ownership and auto review requests.
 
 ## License
 

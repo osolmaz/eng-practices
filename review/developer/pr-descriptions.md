@@ -1,34 +1,34 @@
-# Writing good CL descriptions
+# Writing good PR descriptions
 
 
 
-A CL description is a public record of change, and it is important that it
+A PR description is a public record of change, and it is important that it
 communicates:
 
 1.  **What** change is being made? This should summarize the major changes such
     that readers have a sense of what is being changed without needing to read
-    the entire CL.
+    the entire PR.
 
 1.  **Why** are these changes being made? What contexts did you have as an
     author when making this change? Were there decisions you made that aren't
     reflected in the source code? etc.
 
-The CL description will become a permanent part of our version control history
+The PR description will become a permanent part of our version control history
 and will possibly be read by hundreds of people over the years.
 
-Future developers will search for your CL based on its description. Someone in
+Future developers will search for your PR based on its description. Someone in
 the future might be looking for your change because of a faint memory of its
 relevance but without the specifics handy. If all the important information is
 in the code and not the description, it's going to be a lot harder for them to
-locate your CL.
+locate your PR.
 
-And then, after they find the CL, will they be able to understand *why* the
+And then, after they find the PR, will they be able to understand *why* the
 change was made? Reading source code may reveal what the software is doing but
 it may not reveal why it exists, which can make it harder for future developers
 to know whether they can move
 [Chesterton's fence](https://abseil.io/resources/swe-book/html/ch03.html#understand_context).
 
-A well-written CL description will help those future engineers -- sometimes,
+A well-written PR description will help those future engineers -- sometimes,
 including yourself!
 
 ## First Line {#first-line}
@@ -39,18 +39,18 @@ including yourself!
 *   Complete sentence, written as though it was an order.
 *   Follow by empty line.
 
-The **first line** of a CL description should be a short summary of
-*specifically* **what** *is being done by the CL*, followed by a blank line.
+The **first line** of a PR description should be a short summary of
+*specifically* **what** *is being done by the PR*, followed by a blank line.
 This is what appears in version control history summaries, so it should be
-informative enough that future code searchers don't have to read your CL or its
-whole description to understand what your CL actually *did* or how it differs
-from other CLs. That is, the first line should stand alone, allowing readers to
+informative enough that future code searchers don't have to read your PR or its
+whole description to understand what your PR actually *did* or how it differs
+from other PRs. That is, the first line should stand alone, allowing readers to
 skim through code history much faster.
 
 Try to keep your first line short, focused, and to the point. The clarity and
 utility to the reader should be the top concern.
 
-By tradition, the first line of a CL description is a complete sentence, written
+By tradition, the first line of a PR description is a complete sentence, written
 as though it were an order (an imperative sentence). For example, say
 \"**Delete** the FizzBuzz RPC and **replace** it with the new system." instead
 of \"**Deleting** the FizzBuzz RPC and **replacing** it with the new system."
@@ -61,7 +61,7 @@ though.
 
 The [first line](#first-line) should be a short, focused summary, while the rest
 of the description should fill in the details and include any supplemental
-information a reader needs to understand the changelist holistically. It might
+information a reader needs to understand the change holistically. It might
 include a brief description of the problem that's being solved, and why this is
 the best approach. If there are any shortcomings to the approach, they should be
 mentioned. If relevant, include background information such as bug numbers,
@@ -70,13 +70,13 @@ benchmark results, and links to design documents.
 If you include links to external resources consider that they may not be visible
 to future readers due to access restrictions or retention policies. Where
 possible include enough context for reviewers and future readers to understand
-the CL.
+the PR.
 
-Even small CLs deserve a little attention to detail. Put the CL in context.
+Even small PRs deserve a little attention to detail. Put the PR in context.
 
-## Bad CL Descriptions {#bad}
+## Bad PR Descriptions {#bad}
 
-"Fix bug" is an inadequate CL description. What bug? What did you do to fix it?
+"Fix bug" is an inadequate PR description. What bug? What did you do to fix it?
 Other similarly bad descriptions include:
 
 -   "Fix build."
@@ -86,10 +86,10 @@ Other similarly bad descriptions include:
 -   "Add convenience functions."
 -   "kill weird URLs."
 
-Some of those are real CL descriptions. Although short, they do not provide
+Some of those are real PR descriptions. Although short, they do not provide
 enough useful information.
 
-## Good CL Descriptions {#good}
+## Good PR Descriptions {#good}
 
 Here are some examples of good descriptions.
 
@@ -104,7 +104,7 @@ Example:
 > slowly over time, so that idle servers eventually release all freelist
 > entries.
 
-The first few words describe what the CL actually does. The rest of the
+The first few words describe what the PR actually does. The rest of the
 description talks about the problem being solved, why this is a good solution,
 and a bit more information about the specific implementation.
 
@@ -125,12 +125,12 @@ Example:
 >
 > Continuing the long-range goal of refactoring the Borglet Hierarchy.
 
-The first line describes what the CL does and how this is a change from the
+The first line describes what the PR does and how this is a change from the
 past. The rest of the description talks about the specific implementation, the
-context of the CL, that the solution isn't ideal, and possible future direction.
+context of the PR, that the solution isn't ideal, and possible future direction.
 It also explains *why* this change is being made.
 
-### Small CL that needs some context
+### Small PR that needs some context
 
 Example:
 
@@ -148,7 +148,7 @@ of context.
 
 ## Using tags {#tags}
 
-Tags are manually entered labels that can be used to categorize CLs. These may
+Tags are manually entered labels that can be used to categorize PRs. These may
 be supported by tools or just used by team convention.
 
 For example:
@@ -161,7 +161,7 @@ For example:
 Using tags is optional.
 
 When adding tags, consider whether they should be in the [body](#informative) of
-the CL description or the [first line](#first-line). Limit the usage of tags in
+the PR description or the [first line](#first-line). Limit the usage of tags in
 the first line, as this can obscure the content.
 
 Examples with and without tags:
@@ -179,7 +179,7 @@ Peel the banana before eating.
 // Multiple tags are acceptable if kept short.
 #banana #apple: Assemble a fruit basket.
 
-// Tags can go anywhere in the CL description.
+// Tags can go anywhere in the PR description.
 > Assemble a fruit basket.
 >
 > #banana #apple
@@ -193,17 +193,17 @@ Peel the banana before eating.
 [banana peeler factory factory][apple picking service] Assemble a fruit basket.
 ```
 
-## Generated CL descriptions
+## Generated PR descriptions
 
-Some CLs are generated by tools. Whenever possible, their descriptions should
+Some PRs are generated by tools. Whenever possible, their descriptions should
 also follow the advice here. That is, their first line should be short, focused,
-and stand alone, and the CL description body should include informative details
-that help reviewers and future code searchers understand each CL's effect.
+and stand alone, and the PR description body should include informative details
+that help reviewers and future code searchers understand each PR's effect.
 
-## Review the description before submitting the CL
+## Review the description before merging the PR
 
-CLs can undergo significant change during review. It can be worthwhile to review
-a CL description before submitting the CL, to ensure that the description still
-reflects what the CL does.
+PRs can undergo significant change during review. It can be worthwhile to review
+a PR description before merging the PR, to ensure that the description still
+reflects what the PR does.
 
-Next: [Small CLs](small-cls.md)
+Next: [Small PRs](small-prs.md)

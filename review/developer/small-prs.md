@@ -1,24 +1,24 @@
-# Small CLs
+# Small PRs
 
 
 
-## Why Write Small CLs? {#why}
+## Why Write Small PRs? {#why}
 
-Small, simple CLs are:
+Small, simple PRs are:
 
 -   **Reviewed more quickly.** It's easier for a reviewer to find five minutes
-    several times to review small CLs than to set aside a 30 minute block to
-    review one large CL.
+    several times to review small PRs than to set aside a 30 minute block to
+    review one large PR.
 -   **Reviewed more thoroughly.** With large changes, reviewers and authors tend
     to get frustrated by large volumes of detailed commentary shifting back and
     forth—sometimes to the point where important points get missed or dropped.
 -   **Less likely to introduce bugs.** Since you're making fewer changes, it's
     easier for you and your reviewer to reason effectively about the impact of
-    the CL and see if a bug has been introduced.
--   **Less wasted work if they are rejected.** If you write a huge CL and then
+    the PR and see if a bug has been introduced.
+-   **Less wasted work if they are rejected.** If you write a huge PR and then
     your reviewer says that the overall direction is wrong, you've wasted a lot
     of work.
--   **Easier to merge.** Working on a large CL takes a long time, so you will
+-   **Easier to merge.** Working on a large PR takes a long time, so you will
     have lots of conflicts when you merge, and you will have to merge
     frequently.
 -   **Easier to design well.** It's a lot easier to polish the design and code
@@ -26,10 +26,10 @@ Small, simple CLs are:
     change.
 -   **Less blocking on reviews.** Sending self-contained portions of your
     overall change allows you to continue coding while you wait for your current
-    CL in review.
--   **Simpler to roll back.** A large CL will more likely touch files that get
-    updated between the initial CL submission and a rollback CL, complicating
-    the rollback (the intermediate CLs will probably need to be rolled back
+    PR in review.
+-   **Simpler to roll back.** A large PR will more likely touch files that get
+    updated between the initial PR submission and a rollback PR, complicating
+    the rollback (the intermediate PRs will probably need to be rolled back
     too).
 
 Note that **reviewers have discretion to reject your change outright for the
@@ -37,44 +37,44 @@ sole reason of it being too large.** Usually they will thank you for your
 contribution but request that you somehow make it into a series of smaller
 changes. It can be a lot of work to split up a change after you've already
 written it, or require lots of time arguing about why the reviewer should accept
-your large change. It's easier to just write small CLs in the first place.
+your large change. It's easier to just write small PRs in the first place.
 
 ## What is Small? {#what-is-small}
 
 <a id="what_is_small"></a> <!-- Keep previous permalink to avoid breaking old links. -->
 
-In general, the right size for a CL is **one self-contained change**. This means
-that:
+In general, the right size for a PR is **one self-contained change**. This means
+    that:
 
--   The CL makes a minimal change that addresses **just one thing**. This is
+-   The PR makes a minimal change that addresses **just one thing**. This is
     usually just one part of a feature, rather than a whole feature at once. In
-    general it's better to err on the side of writing CLs that are too small vs.
-    CLs that are too large. Work with your reviewer to find out what an
+    general it's better to err on the side of writing PRs that are too small vs.
+    PRs that are too large. Work with your reviewer to find out what an
     acceptable size is.
--   The CL should [include related test code](#test_code).
--   Everything the reviewer needs to understand about the CL (except future
-    development) is in the CL, the CL's description, the existing codebase, or a
-    CL they've already reviewed.
+-   The PR should [include related test code](#test_code).
+-   Everything the reviewer needs to understand about the PR (except future
+    development) is in the PR, the PR's description, the existing codebase, or a
+    PR they've already reviewed.
 -   The system will continue to work well for its users and for the developers
-    after the CL is checked in.
--   The CL is not so small that its implications are difficult to understand. If
-    you add a new API, you should include a usage of the API in the same CL so
+    after the PR is merged.
+-   The PR is not so small that its implications are difficult to understand. If
+    you add a new API, you should include a usage of the API in the same PR so
     that reviewers can better understand how the API will be used. This also
     prevents checking in unused APIs.
 
 There are no hard and fast rules about how large is "too large." 100 lines is
-usually a reasonable size for a CL, and 1000 lines is usually too large, but
+usually a reasonable size for a PR, and 1000 lines is usually too large, but
 it's up to the judgment of your reviewer. The number of files that a change is
 spread across also affects its "size." A 200-line change in one file might be
 okay, but spread across 50 files it would usually be too large.
 
 Keep in mind that although you have been intimately involved with your code from
 the moment you started to write it, the reviewer often has no context. What
-seems like an acceptably-sized CL to you might be overwhelming to your reviewer.
-When in doubt, write CLs that are smaller than you think you need to write.
-Reviewers rarely complain about getting CLs that are too small.
+seems like an acceptably-sized PR to you might be overwhelming to your reviewer.
+When in doubt, write PRs that are smaller than you think you need to write.
+Reviewers rarely complain about getting PRs that are too small.
 
-## When are Large CLs Okay? {#large-okay}
+## When are Large PRs Okay? {#large-okay}
 
 <a id="large_okay"></a> <!-- Keep previous permalink to avoid breaking old links. -->
 
@@ -82,51 +82,51 @@ There are a few situations in which large changes aren't as bad:
 
 -   You can usually count deletion of an entire file as being just one line of
     change, because it doesn't take the reviewer very long to review.
--   Sometimes a large CL has been generated by an automatic refactoring tool
+-   Sometimes a large PR has been generated by an automatic refactoring tool
     that you trust completely, and the reviewer's job is just to verify and say
-    that they really do want the change. These CLs can be larger, although some
+    that they really do want the change. These PRs can be larger, although some
     of the caveats from above (such as merging and testing) still apply.
 
-## Writing Small CLs Efficiently {#efficiently}
+## Writing Small PRs Efficiently {#efficiently}
 
-If you write a small CL and then you wait for your reviewer to approve it before
-you write your next CL, then you're going to waste a lot of time. So you want to
+If you write a small PR and then you wait for your reviewer to approve it before
+you write your next PR, then you're going to waste a lot of time. So you want to
 find some way to work that won't block you while you're waiting for review. This
 could involve having multiple projects to work on simultaneously, finding
 reviewers who agree to be immediately available, doing in-person reviews, pair
-programming, or splitting your CLs in a way that allows you to continue working
+programming, or splitting your PRs in a way that allows you to continue working
 immediately.
 
-## Splitting CLs {#splitting}
+## Splitting PRs {#splitting}
 
-When starting work that will have multiple CLs with potential dependencies among
-each other, it's often useful to think about how to split and organize those CLs
+When starting work that will have multiple PRs with potential dependencies among
+each other, it's often useful to think about how to split and organize those PRs
 at a high level before diving into coding.
 
 Besides making things easier for you as an author to manage and organize your
-CLs, it also makes things easier for your code reviewers, which in turn makes
+PRs, it also makes things easier for your code reviewers, which in turn makes
 your code reviews more efficient.
 
-Here are some strategies for splitting work into different CLs.
+Here are some strategies for splitting work into different PRs.
 
 ### Stacking Multiple Changes on Top of Each Other {#stacking}
 
-One way to split up a CL without blocking yourself is to write one small CL,
-send it off for review, and then immediately start writing another CL *based* on
-the first CL. Most version control systems allow you to do this somehow.
+One way to split up a PR without blocking yourself is to write one small PR,
+send it off for review, and then immediately start writing another PR *based* on
+the first PR. Most version control systems allow you to do this somehow.
 
 ### Splitting by Files {#splitting-files}
 
-Another way to split up a CL is by groupings of files that will require
+Another way to split up a PR is by groupings of files that will require
 different reviewers but are otherwise self-contained changes.
 
-For example: you send off one CL for modifications to a protocol buffer and
-another CL for changes to the code that uses that proto. You have to submit the
-proto CL before the code CL, but they can both be reviewed simultaneously. If
-you do this, you might want to inform both sets of reviewers about the other CL
+For example: you send off one PR for modifications to a protocol buffer and
+another PR for changes to the code that uses that proto. You have to merge the
+proto PR before the code PR, but they can both be reviewed simultaneously. If
+you do this, you might want to inform both sets of reviewers about the other PR
 that you wrote, so that they have context for your changes.
 
-Another example: you send one CL for a code change and another for the
+Another example: you send one PR for a code change and another for the
 configuration or experiment that uses that code; this is easier to roll back
 too, if necessary, as configuration/experiment files are sometimes pushed to
 production faster than code changes.
@@ -161,7 +161,7 @@ validation logic.
 ### Splitting Horizontally & Vertically {#splitting-grid}
 
 To take this a step further, you could combine these approaches and chart out an
-implementation plan like this, where each cell is its own standalone CL.
+implementation plan like this, where each cell is its own standalone PR.
 Starting from the model (at the bottom) and working up to the client:
 
 | Layer   | Feature: Multiplication   | Feature: Division               |
@@ -174,39 +174,39 @@ Starting from the model (at the bottom) and working up to the client:
 
 ## Separate Out Refactorings {#refactoring}
 
-It's usually best to do refactorings in a separate CL from feature changes or
-bug fixes. For example, moving and renaming a class should be in a different CL
+It's usually best to do refactorings in a separate PR from feature changes or
+bug fixes. For example, moving and renaming a class should be in a different PR
 from fixing a bug in that class. It is much easier for reviewers to understand
-the changes introduced by each CL when they are separate.
+the changes introduced by each PR when they are separate.
 
 Small cleanups such as fixing a local variable name can be included inside of a
-feature change or bug fix CL, though. It's up to the judgment of developers and
+feature change or bug fix PR, though. It's up to the judgment of developers and
 reviewers to decide when a refactoring is so large that it will make the review
-more difficult if included in your current CL.
+more difficult if included in your current PR.
 
-## Keep related test code in the same CL {#test-code}
+## Keep related test code in the same PR {#test-code}
 
 <a id="test_code"></a> <!-- Keep previous permalink to avoid breaking old links. -->
 
-CLs should include related test code. Remember that [smallness](#what-is-small)
-here refers the conceptual idea that the CL should be focused and is not a
+PRs should include related test code. Remember that [smallness](#what-is-small)
+here refers the conceptual idea that the PR should be focused and is not a
 simplistic function on line count.
 
 Tests are expected for all Google changes.
 
-A CL that adds or changes logic should be accompanied by new or updated tests
-for the new behavior. Pure refactoring CLs (that aren't intended to change
+A PR that adds or changes logic should be accompanied by new or updated tests
+for the new behavior. Pure refactoring PRs (that aren't intended to change
 behavior) should also be covered by tests; ideally, these tests already exist,
 but if they don't, you should add them.
 
-*Independent* test modifications can go into separate CLs first, similar to the
+*Independent* test modifications can go into separate PRs first, similar to the
 [refactorings guidelines](#refactoring). That includes:
 
-*   Validating pre-existing, submitted code with new tests.
+*   Validating pre-existing, merged code with new tests.
     *   Ensures that important logic is covered by tests.
     *   Increases confidence in subsequent refactorings on affected code. For
         example, if you want to refactor code that isn't already covered by
-        tests, submitting test CLs *before* submitting refactoring CLs can
+        tests, merging test PRs *before* merging refactoring PRs can
         validate that the tested behavior is unchanged before and after the
         refactoring.
 *   Refactoring the test code (e.g. introduce helper functions).
@@ -214,26 +214,26 @@ but if they don't, you should add them.
 
 ## Don't Break the Build {#break}
 
-If you have several CLs that depend on each other, you need to find a way to
-make sure the whole system keeps working after each CL is submitted. Otherwise
+If you have several PRs that depend on each other, you need to find a way to
+make sure the whole system keeps working after each PR is merged. Otherwise
 you might break the build for all your fellow developers for a few minutes
-between your CL submissions (or even longer if something goes wrong unexpectedly
-with your later CL submissions).
+between your PR merges (or even longer if something goes wrong unexpectedly
+with your later PR merges).
 
 ## Can't Make it Small Enough {#cant}
 
-Sometimes you will encounter situations where it seems like your CL *has* to be
-large. This is very rarely true. Authors who practice writing small CLs can
+Sometimes you will encounter situations where it seems like your PR *has* to be
+large. This is very rarely true. Authors who practice writing small PRs can
 almost always find a way to decompose functionality into a series of small
 changes.
 
-Before writing a large CL, consider whether preceding it with a refactoring-only
-CL could pave the way for a cleaner implementation. Talk to your teammates and
-see if anybody has thoughts on how to implement the functionality in small CLs
+Before writing a large PR, consider whether preceding it with a refactoring-only
+PR could pave the way for a cleaner implementation. Talk to your teammates and
+see if anybody has thoughts on how to implement the functionality in small PRs
 instead.
 
 If all of these options fail (which should be extremely rare) then get consent
-from your reviewers in advance to review a large CL, so they are warned about
+from your reviewers in advance to review a large PR, so they are warned about
 what is coming. In this situation, expect to be going through the review process
 for a long time, be vigilant about not introducing bugs, and be extra diligent
 about writing tests.
