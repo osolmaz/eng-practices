@@ -1,4 +1,14 @@
-# Google Engineering Practices Documentation
+# Google Engineering Practices Documentation (GitHub Adaptation)
+
+> This is an adaptation of the original [Google's Code Review Guidelines](https://google.github.io/eng-practices/review/), to use GitHub specific terminology. Google has their own internal tools for version control ([Piper](https://en.wikipedia.org/wiki/Piper_(source_control_system))) and code review ([Critique](https://abseil.io/resources/swe-book/html/ch19.html)). They have their own terminology, like "Change List" (CL) instead of "Pull Request" (PR) which most developers are more familiar with. The changes are minimal and the content is kept as close to the original as possible. The hope is to make this gem accessible to a wider audience.
+
+You can run `uv run scripts/merge_docs.py` to merge the documents into a single file:
+
+```bash
+uv run scripts/merge_docs.py
+```
+
+---
 
 Google has many generalized engineering practices that cover all languages and
 all projects. These documents represent our collective experience of various
